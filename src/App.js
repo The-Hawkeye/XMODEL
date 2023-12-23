@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+// App.js
+import { useState, useEffect } from 'react';
 import './App.css';
+import Form from "./Components/Form";
 
 function App() {
+  const [openForm, setOpenForm] = useState(false);
+
+  const handleClick = (e) => {
+    setOpenForm(!openForm);
+    e.stopPropagation();
+
+  };
+
+  const handleOutsideClick = (event) => {
+    if (openForm && !event.target.closest('.model-content')) {
+      // Clicked outside the form, close the form
+      console.log("helo");
+      setOpenForm(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [openForm]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`model ${openForm ? 'blur-back' : ''}`}>
+      <h1>User Details Model</h1>
+      <button onClick={(e)=>handleClick(e)}>Open Form</button>
+      {openForm ? <Form handleClick={handleClick} /> : null}
     </div>
   );
 }

@@ -1,0 +1,16 @@
+.form-container{
+    width: 700px;
+    /* background-color: aquamarine; */
+    background-color: #2b507a;
+    height: 500px;
+}
+
+.input-field{
+    width: 80%;
+}
+
+.form{
+    display: inline-block;
+    width: 100%;
+   
+}
