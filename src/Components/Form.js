@@ -44,7 +44,7 @@ const Form = ({ handleClick }) => {
   };
 
   return (
-    <div className="model-content" onClick={(e) => e.stopPropagation()}>
+    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
       <div>Hello</div>
       <div className="form-container">
         <form onSubmit={(e) => handleSubmit(e)} className="form">

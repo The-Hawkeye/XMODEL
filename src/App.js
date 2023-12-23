@@ -30,7 +30,7 @@ function App() {
   }, [openForm]);
 
   return (
-    <div className={`model ${openForm ? 'blur-back' : ''}`}>
+    <div className={`modal ${openForm ? 'blur-back' : ''}`}>
       <h1>User Details Model</h1>
       <button onClick={(e)=>handleClick(e)}>Open Form</button>
       {openForm ? <Form handleClick={handleClick} /> : null}
