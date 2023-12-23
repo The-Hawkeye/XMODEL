@@ -45,7 +45,7 @@ const Form = ({ handleClick }) => {
 
   return (
     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <form onSubmit={(e) => handleSubmit(e)} className="form">
+        <form onSubmit={(e) => handleSubmit(e)}>
           <label>Username:</label>
           <br />
           <input
