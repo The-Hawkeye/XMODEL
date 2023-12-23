@@ -26,6 +26,7 @@ function App() {
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [openForm]);
 
   return (
