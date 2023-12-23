@@ -40,7 +40,7 @@ const Form = ({ handleClick }) => {
     // Handle form submission logic here
 
     // Close the modal
-    handleClick();
+    handleClick(e);
   };
 
   return (
@@ -90,7 +90,7 @@ const Form = ({ handleClick }) => {
             id="dob"
           />
           <br/>
-          <input type="submit" className="submit-button" />
+          <button type="submit" className="submit-button">Submit</button>
         </form>
     </div>
   );
