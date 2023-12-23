@@ -54,6 +54,7 @@ const Form = ({ handleClick }) => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
+            id="username"
           />
           <br />
           <label>Email Address:</label>
@@ -64,6 +65,7 @@ const Form = ({ handleClick }) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            id="email"
           />
           <br />
           <label>Phone Number:</label>
@@ -74,6 +76,7 @@ const Form = ({ handleClick }) => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
+            id="phone"
           />
           <br />
           <label>Date of Birth:</label>
@@ -84,6 +87,7 @@ const Form = ({ handleClick }) => {
             value={dob}
             onChange={(e) => setDob(e.target.value)}
             required
+            id="dob"
           />
           <br/>
           <input type="submit" className="submit-button" />
