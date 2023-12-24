@@ -1,44 +1,44 @@
-// // // // App.js
-// // // import { useState, useEffect } from 'react';
-// // // import './App.css';
-// // // import Form from "./Components/Form";
+// App.js
+import { useState, useEffect } from 'react';
+import './App.css';
+import Form from "./Components/Form";
 
-// // // function App() {
-// // //   const [openForm, setOpenForm] = useState(false);
+function App() {
+  const [openForm, setOpenForm] = useState(false);
 
-// // //   const handleClick = (e) => {
-// // //     setOpenForm(!openForm);
-// // //     e.stopPropagation();
+  const handleClick = (e) => {
+    setOpenForm(!openForm);
+    e.stopPropagation();
 
-// // //   };
+  };
 
-// // //   const handleOutsideClick = (event) => {
-// // //     if (openForm && !event.target.closest('.model-content')) {
-// // //       // Clicked outside the form, close the form
-// // //       console.log("helo");
-// // //       setOpenForm(false);
-// // //     }
-// // //   };
+  const handleOutsideClick = (event) => {
+    if (openForm && !event.target.closest('.model-content')) {
+      // Clicked outside the form, close the form
+      console.log("helo");
+      setOpenForm(false);
+    }
+  };
 
-// // //   useEffect(() => {
-// // //     document.addEventListener('click', handleOutsideClick);
+  useEffect(() => {
+    document.addEventListener('click', handleOutsideClick);
 
-// // //     return () => {
-// // //       document.removeEventListener('click', handleOutsideClick);
-// // //     };
-// // //   // eslint-disable-next-line react-hooks/exhaustive-deps
-// // //   }, [openForm]);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openForm]);
 
-// // //   return (
-// // //     <div className={`modal ${openForm ? 'blur-back' : ''}`}>
-// // //       <h1>User Details Model</h1>
-// // //       <button onClick={(e)=>handleClick(e)}>Open Form</button>
-// // //       {openForm ? <Form handleClick={handleClick} /> : null}
-// // //     </div>
-// // //   );
-// // // }
+  return (
+    <div className={`modal ${openForm ? 'blur-back' : ''}`}>
+      <h1>User Details Model</h1>
+      <button onClick={(e)=>handleClick(e)}>Open Form</button>
+      {openForm ? <Form handleClick={handleClick} /> : null}
+    </div>
+  );
+}
 
-// // // export default App;
+export default App;
 
 
 
@@ -227,31 +227,31 @@
 
 
 // App.js
-import React, { useState } from "react";
-import "./styles.css";
-import User from "../src/Components/User";
+// import React, { useState } from "react";
+// import "./styles.css";
+// import User from "../src/Components/User";
 
-const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
+// const App = () => {
+//   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => {
-    setIsOpen(true);
-  };
+//   const openModal = () => {
+//     setIsOpen(true);
+//   };
 
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+//   const closeModal = () => {
+//     setIsOpen(false);
+//   };
 
-  return (
-    <div className={`App ${isOpen ? 'blur-back' : ''}`}>
-      <h1>User Details Modal</h1>
-      <button onClick={openModal} className="submit-button">
-        Open Form
-      </button>
-      {isOpen && <User closeModal={closeModal} />}
-    </div>
-  );
-};
+//   return (
+//     <div className={`App ${isOpen ? 'blur-back' : ''}`}>
+//       <h1>User Details Modal</h1>
+//       <button onClick={openModal} className="submit-button">
+//         Open Form
+//       </button>
+//       {isOpen && <User closeModal={closeModal} />}
+//     </div>
+//   );
+// };
 
-export default App;
+// export default App;
 

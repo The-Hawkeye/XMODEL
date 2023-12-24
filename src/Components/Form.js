@@ -89,8 +89,9 @@ const Form = ({ handleClick }) => {
             required
             id="dob"
           />
-          <br/>
+          <div>
           <button type="submit" className="submit-button">Submit</button>
+          </div>
         </form>
     </div>
   );
